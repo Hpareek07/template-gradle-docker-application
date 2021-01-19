@@ -7,8 +7,7 @@ pipeline:
   publish:
     group: publish
     image: plugins/docker
-    registry: hub.docker.com
-    repo: hub.docker.com/hpareek07/sample_gradle_project
+    repo: hpareek07/sample_gradle_project
     tags:
       - "${DRONE_TAG}"
       - "latest"
