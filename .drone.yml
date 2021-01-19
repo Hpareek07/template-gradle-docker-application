@@ -1,0 +1,22 @@
+pipeline:
+  build:
+    group: build
+    image: gradle:jdk11
+    commands:
+      - ./gradlew
+  publish:
+    group: publish
+    image: plugins/docker
+    registry: hub.docker.com
+    repo: hub.docker.com/hpareek07/sample_gradle_project
+    tags:
+      - "${DRONE_TAG}"
+      - "latest"
+    when:
+      branch:
+        - master
+    secrets:
+      - source: ci-user
+        target: DOCKER_USERNAME
+      - source: ci-pass
+        target: DOCKER_PASSWORD
