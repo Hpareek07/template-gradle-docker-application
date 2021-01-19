@@ -9,7 +9,6 @@ pipeline:
     image: plugins/docker
     repo: hpareek07/sample_gradle_project
     tags:
-      - "${DRONE_TAG}"
       - "latest"
     when:
       branch:
