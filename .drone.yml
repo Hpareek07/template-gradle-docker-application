@@ -14,8 +14,4 @@ pipeline:
     when:
       branch:
         - master
-    secrets:
-      - source: ci-user
-        target: DOCKER_USERNAME
-      - source: ci-pass
-        target: DOCKER_PASSWORD
+    secrets: [ ci_user, ci-pass ]
