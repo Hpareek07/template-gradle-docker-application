@@ -3,7 +3,7 @@ pipeline:
     group: build
     image: gradle:jdk11
     commands:
-      - ./gradlew
+      - gradle build
   publish:
     group: publish
     image: plugins/docker
